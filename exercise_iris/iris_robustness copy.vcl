@@ -62,10 +62,19 @@ trainingX : Vector InputVector n
 @dataset
 trainingy : Vector OutputVector n
 
--- auxiliary functions
-advisedLabel : OutputVector -> Index 3
-advisedLabel y = if (y ! 0 >= y ! 1 and y ! 0 >= y ! 2) then 0 else 
-    (if y ! 1 >= y ! 2 then 1 else 2)
+-- -- auxiliary functions
+-- advisedLabel : OutputVector -> Index 3
+-- advisedLabel y = if (y ! 0 >= y ! 1 and y ! 0 >= y ! 2) then 0 else 
+--     (if y ! 1 >= y ! 2 then 1 else 2)
+
+-- with fold
+max : Vector Rat 2 -> Rat
+max v = if v ! 0 >= v ! 1 then v ! 0 else v ! 1
+
+
+advisedLabel : inputVector -> Index 3
+advisedLabel : 
+
 
 advises : InputVector -> OutputVector -> Bool
 advises input output = forall i . 
@@ -79,7 +88,7 @@ robustAround : InputVector -> OutputVector -> Bool
 robustAround input output = forall pertubation .
     let perturbedInput = input - pertubation in 
     boundedByEpsilon pertubation and validInput perturbedInput => 
-    advises perturbedInput output  
+    advises input output  
 
 @property
 robust : Vector Bool n
