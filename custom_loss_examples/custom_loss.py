@@ -18,9 +18,6 @@ def custom_train(
     optimizer = keras.optimizers.Adam()
     standard_loss = keras.losses.CategoricalCrossentropy(from_logits=True) # the last activation is 'relu'
 
-    # # use ce for now / define custom loss functions later
-    # constraint_loss = constraint_loss()
-
     # set accuracy / loss metrics for train/test sets
     train_acc_metric = keras.metrics.CategoricalAccuracy()
     test_acc_metric = keras.metrics.CategoricalAccuracy()
@@ -100,6 +97,7 @@ def mnist_custom_train(buffer_size=1024, batch_size=200):
     test_dataset = tf.data.Dataset.from_tensor_slices((X_test, y_test))
 
     # preprocess datasets
+    # shuffle train data to avoid learning from the ordering and to prevent overfit 
     train_dataset = train_dataset.shuffle(buffer_size).batch(batch_size)
     test_dataset = test_dataset.batch(batch_size)
 
@@ -118,9 +116,9 @@ def mnist_custom_train(buffer_size=1024, batch_size=200):
             model,  # pass the prepared model and datasets
             train_dataset,
             test_dataset,
-            num_epochs=5,  # set num_epochs as 4
+            num_epochs=5,  
             alpha=alpha,
-            constraint_loss=keras.losses.mae  #
+            constraint_loss=keras.losses.mae  # random choice for now
         )
 
         # save the model
