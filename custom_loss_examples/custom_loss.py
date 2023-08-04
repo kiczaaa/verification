@@ -3,6 +3,7 @@ import tensorflow as tf
 from tensorflow import keras as keras
 import tf2onnx
 import idx2numpy
+import vehicle_lang as vcl
 
 
 def custom_train(
