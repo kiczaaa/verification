@@ -57,15 +57,19 @@ normalLengths x = x ! sepalLength > x ! sepalWidth
 -- predicted petalWidth = petalLength * 0.4132382936645491 -0.35666804105655303
 -- -0.6491527433673527 <= error <= 0.5574664034649219
 -- -0.5 <= petalLength * 0.4132382936645491 - 0.35666804105655303 - petalWidth <= 0.5
+minErr = -0.6491527433673527
+maxErr = 0.5574664034649219
+slope = 0.4132382936645491
+intercept = - 0.35666804105655303
 normalCorr : InputVector -> Bool
-normalCorr x = -0.6491527433673527 <= x ! petalLength * 0.4132382936645491 - 0.35666804105655303 - x ! petalWidth <= 0.5574664034649219
+normalCorr x = minErr <= x ! petalLength * slope + intercept - x ! petalWidth <= maxErr
 
 -- Combile all
 validInput : InputVector -> Bool
 validInput x = normalSepalLength x and normalSepalWidth x 
     and normalPetalLength x and normalPetalWidth x
     and normalLengths x
-    -- and normalCorr x
+    and normalCorr x
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -112,7 +116,7 @@ boundedByEpsilon x = forall i . -epsilon <= x ! i <= epsilon
 
 robustAround : InputVector -> OutputVector -> Bool
 robustAround input output = forall pertubation .
-    let perturbedInput = input - pertubation in 
+    let perturbedInput = input + pertubation in 
     boundedByEpsilon pertubation and validInput perturbedInput => 
     advises perturbedInput output  
 
