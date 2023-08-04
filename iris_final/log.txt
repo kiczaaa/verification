@@ -1,0 +1,71 @@
+vehicle verify --specification iris.vcl --network irisClassifier:network.onnx --dataset trainingX:iris_x.idx --dataset trainingY:iri
+s_y.idx --parameter epsilon:0.1 --verifier Marabou
+Verifying properties:
+    result: ✗ - counterexample found...............................] 0/2 queries
+      x: [4.3, 2.0, 2.0, 0.469998]
+  robust!0 [=======================================================] 2/2 queries
+    result: ✗ - counterexample found
+      pertubation: [9.999999999999964e-2, 9.999999999999964e-2, -9.999999999999964e-2, -6.523600000000007e-2]
+  robust!1 [=======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!2 [=======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!3 [=======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!4 [=======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!5 [=======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!6 [=======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!7 [=======================================================] 2/2 queries
+    result: ✗ - counterexample found
+      pertubation: [7.343600000000006e-2, 0.10000000000000009, 9.999999999999964e-2, 9.999999999999964e-2]
+  robust!8 [=======================================================] 2/2 queries
+    result: ✗ - counterexample found
+      pertubation: [0.10000000000000053, 0.10000000000000009, -2.843199999999957e-2, 0.10000000000000009]
+  robust!9 [=======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!10 [======================================================] 2/2 queries
+    result: ✗ - counterexample found
+      pertubation: [-6.401000000000323e-3, 0.10000000000000009, 9.999999999999964e-2, 0.10000000000000009]
+  robust!11 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!12 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!13 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!14 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!15 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!16 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!17 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!18 [======================================================] 2/2 queries
+    result: ✗ - counterexample found
+      pertubation: [0.10000000000000053, 9.999999999999964e-2, -8.032899999999987e-2, 0.10000000000000009]
+  robust!19 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!20 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!21 [======================================================] 2/2 queries
+    result: ✗ - counterexample found
+      pertubation: [-0.10000000000000053, 0.10000000000000009, 0.10000000000000053, 0.10000000000000009]
+  robust!22 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!23 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!24 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!25 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!26 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!27 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!28 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
+  robust!29 [======================================================] 2/2 queries
+    result: 🗸 - proved no counterexample exists
