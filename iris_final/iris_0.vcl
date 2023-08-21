@@ -45,7 +45,7 @@ normalPetalLength x = 1.0 <= x ! petalLength <= 6.9
 normalPetalWidth : InputVector -> Bool
 normalPetalWidth x = 0.1 <= x ! petalWidth <= 2.5
 
--- Combile all
+-- Combine all
 validInput : InputVector -> Bool
 validInput x = normalSepalLength x and normalSepalWidth x 
     and normalPetalLength x and normalPetalWidth x
