@@ -75,7 +75,6 @@ def custom_train(
         )
     return model
 
-
 def mnist_custom_train(buffer_size=1024, batch_size=200):
     ## set different alphas
     alphas = [1., 0.75, 0.5, 0.25, 0.]
